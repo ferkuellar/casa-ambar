@@ -27,6 +27,12 @@ copy .env.example .env
 npm run dev
 ```
 
+Build de validación frontend:
+
+```bash
+npm run build
+```
+
 ## Variables de entorno
 
 Backend:
@@ -85,4 +91,4 @@ Luego abrir:
 http://localhost:5173
 ```
 
-La pantalla inicial debe mostrar el estado del backend como conectado.
+La pantalla inicial debe mostrar el layout premium de Casa Ámbar y el estado del backend como conectado en la sección técnica final.

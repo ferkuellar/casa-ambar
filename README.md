@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 0 — Fundación del Proyecto**.
+Estado actual: **Fase 1 — Identidad Visual y Frontend Base**.
 
 ## Stack técnico
 
@@ -26,6 +26,10 @@ casa-ambar-ecommerce/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── layout/
+│   │   │   ├── sections/
+│   │   │   └── ui/
+│   │   ├── constants/
 │   │   └── lib/
 │   ├── .env.example
 │   ├── package.json
@@ -33,7 +37,8 @@ casa-ambar-ecommerce/
 ├── docs/
 │   ├── architecture.md
 │   ├── setup.md
-│   └── auditoria-fase0.md
+│   ├── auditoria-fase0.md
+│   └── auditoria-fase1.md
 ├── .gitignore
 └── README.md
 ```
@@ -75,6 +80,12 @@ copy .env.example .env
 npm run dev
 ```
 
+Build de validación:
+
+```bash
+npm run build
+```
+
 Aplicación:
 
 ```txt
@@ -100,4 +111,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 1 debería enfocarse en el diseño del catálogo: modelos de producto, categorías, colecciones, serializers, endpoints base, estrategia de imágenes y primeras pruebas de API. No conviene avanzar a Stripe o carrito antes de tener el dominio de productos estable.
+Fase 2 debe enfocarse en catálogo base y modelo de productos: productos, categorías, colecciones, imágenes, serializers, endpoints y pruebas API mínimas. No conviene avanzar a Stripe o carrito antes de tener el dominio de productos estable.

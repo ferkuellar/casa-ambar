@@ -31,3 +31,12 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - Se agregó CORS solo para desarrollo local.
 - Se dejó SQLite como base temporal para reducir fricción inicial.
 - No se implementó autenticación, catálogo, carrito, pagos ni CRM para mantener el alcance limpio.
+
+## Decisiones técnicas de Fase 1
+
+- Se creó un sistema visual base en Tailwind con tokens Casa Ámbar.
+- Se separó el frontend en layout, secciones, componentes UI, constantes y utilidades.
+- `App.tsx` quedó como composición de página, sin lógica visual concentrada.
+- La home usa placeholders editoriales sin datos reales para no adelantar catálogo.
+- `HealthCheck` se mantiene como bloque técnico discreto conectado a la API de Fase 0.
+- Se importan dos familias de Google Fonts: Cormorant Garamond para titulares e Inter para texto. La carga se documenta como decisión visual y debe revisarse en performance cuando exista SEO productivo.
