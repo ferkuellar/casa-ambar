@@ -15,7 +15,7 @@ export function NewsletterSection() {
               Agenda una conversación con Casa Ámbar.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-amber-stone">
-              Comparte tus datos para resolver dudas, consultar disponibilidad o preparar una cita boutique.
+              Comparte tus datos para resolver dudas, consultar disponibilidad o revisar opciones de compra asistida.
             </p>
           </div>
 

@@ -5,18 +5,18 @@ import { Container } from "../ui/Container";
 
 export function CustomDesignSection() {
   return (
-    <section id="diseno-personalizado" className="bg-amber-black py-20 text-amber-ivory sm:py-28">
+    <section id="asesoria" className="bg-amber-black py-20 text-amber-ivory sm:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-amber-softGold">
-              Diseño personalizado
+              Asesoría de compra
             </p>
             <h2 className="mt-5 font-heading text-5xl font-semibold leading-tight sm:text-6xl">
-              Una pieza diseñada contigo, no solo para ti.
+              Te ayudamos a elegir una pieza disponible.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-amber-muted sm:text-lg">
-              Cuéntanos la ocasión, la idea o la historia. En Casa Ámbar transformamos intención en una pieza personal: anillos, argollas, regalos especiales y joyería a medida.
+              Cuéntanos la ocasión, el estilo y el presupuesto. En Casa Ámbar revisamos piezas de joyería disponibles para ayudarte a comprar o apartar con seguridad.
             </p>
 
             <div className="mt-9 space-y-4">

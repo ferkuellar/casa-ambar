@@ -14,7 +14,7 @@ export function Footer() {
               {siteConfig.name}
             </a>
             <p className="mt-4 max-w-sm text-sm leading-7 text-amber-muted">
-              {siteConfig.description} Base visual en construcción para una experiencia de compra premium.
+              {siteConfig.description} Experiencia de compra asistida para elegir piezas disponibles con calma.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
               <br />
               10:00 a 18:00
               <br />
-              Citas personalizadas
+              Citas y atención por WhatsApp
             </p>
           </div>
         </div>

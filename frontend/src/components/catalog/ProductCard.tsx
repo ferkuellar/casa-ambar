@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { siteConfig } from "../../constants/site";
+import { useCart } from "../../hooks/useCart";
+import { toCartProduct } from "../../lib/cartProduct";
 import { routes } from "../../lib/routes";
 import { buildWhatsAppLink } from "../../lib/whatsapp";
 import type { ProductListItem } from "../../types/catalog";
@@ -20,9 +22,11 @@ function getImageSource(product: ProductListItem): string | null {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const { addItem } = useCart();
   const imageSource = getImageSource(product);
   const categoryName = product.category.name;
   const priceText = product.price_label || product.price || "Precio bajo consulta";
+  const cartProduct = toCartProduct(product);
   const whatsappHref = buildWhatsAppLink({
     phoneNumber: siteConfig.whatsappNumber,
     message: `Hola, me interesa consultar la pieza ${product.name} de Casa Ámbar.`,
@@ -66,16 +70,22 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="mt-6 border-t border-amber-line pt-5">
           <p className="text-sm font-semibold text-amber-espresso">{priceText}</p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5 grid gap-3">
             <Link
               className="inline-flex items-center justify-center rounded-brand border border-amber-black px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-amber-black transition-colors hover:bg-amber-black hover:text-amber-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-gold"
               to={routes.product(product.slug)}
             >
               Ver detalle
             </Link>
-            <Button href={whatsappHref} target="_blank" rel="noreferrer" size="sm">
-              Consultar
-            </Button>
+            {cartProduct ? (
+              <Button size="sm" onClick={() => addItem(cartProduct)}>
+                Agregar
+              </Button>
+            ) : (
+              <Button href={whatsappHref} target="_blank" rel="noreferrer" size="sm">
+                Cotizar
+              </Button>
+            )}
           </div>
         </div>
       </div>

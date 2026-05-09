@@ -9,8 +9,8 @@ export function TrustSection() {
       <Container>
         <SectionHeader
           eyebrow="Confianza"
-          title="Servicio sobrio para decisiones importantes."
-          description="La experiencia se orienta a resolver dudas, cotizar con claridad y acompañar cada elección con atención cercana."
+          title="Comprar joyería con claridad."
+          description="Casa Ámbar acompaña la elección de piezas disponibles con información clara, atención cercana y seguimiento ordenado."
           align="center"
           tone="inverse"
         />

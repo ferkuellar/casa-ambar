@@ -22,7 +22,7 @@ export function WhatsAppCTASection() {
               ¿Buscas una pieza especial?
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-amber-muted sm:text-lg">
-              Escríbenos por WhatsApp y te ayudamos a elegir, cotizar o diseñar una joya para la ocasión.
+              Escríbenos por WhatsApp y te ayudamos a revisar piezas disponibles, precio, medidas y opciones para apartado o compra asistida.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export function WhatsAppCTASection() {
               Escribir por WhatsApp
             </Button>
             <p className="mt-4 text-sm leading-6 text-amber-muted">
-              Número temporal configurable. Validar con el cliente antes de producción.
+              Número temporal configurable. Validar con el cliente antes de publicar.
             </p>
           </div>
         </div>

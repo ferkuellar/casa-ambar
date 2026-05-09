@@ -11,8 +11,8 @@ export function CollectionsSection() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <SectionHeader
             eyebrow="Colecciones"
-            title="Piezas para prometer, regalar y recordar."
-            description="Categorías principales listas para evolucionar hacia un catálogo editorial con productos reales."
+            title="Compra por categoría."
+            description="Explora piezas disponibles por tipo de joyería y encuentra opciones listas para venta o consulta."
           />
 
           <div className="grid gap-5 sm:grid-cols-2">
@@ -36,7 +36,7 @@ export function CollectionsSection() {
                   </p>
                   <a
                     className="mt-6 inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-amber-espresso transition-colors hover:text-amber-gold"
-                    href="#destacados"
+                    href="/catalogo"
                   >
                     {collection.cta}
                   </a>

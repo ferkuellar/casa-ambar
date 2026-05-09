@@ -4,6 +4,6 @@ export const routes = {
   collections: "/colecciones",
   category: (slug: string) => `/colecciones/${slug}`,
   product: (slug: string) => `/producto/${slug}`,
-  customDesign: "/#diseno-personalizado",
+  customDesign: "/#asesoria",
   contact: "/#contacto",
 } as const;

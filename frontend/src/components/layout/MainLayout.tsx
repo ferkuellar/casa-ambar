@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { CartDrawer } from "../cart/CartDrawer";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
@@ -14,6 +15,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <CartDrawer />
     </div>
   );
 }

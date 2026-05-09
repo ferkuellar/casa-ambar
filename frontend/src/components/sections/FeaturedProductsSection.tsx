@@ -11,14 +11,14 @@ export function FeaturedProductsSection() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeader
             eyebrow="Destacados"
-            title="Primeras piezas para orientar la experiencia."
-            description="Productos mock locales para validar composición, intención comercial y jerarquía visual antes del catálogo real."
+            title="Piezas destacadas de la tienda."
+            description="Una selección editorial para conocer el estilo Casa Ámbar antes de explorar todo el catálogo."
           />
           <a
             className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-gold transition-colors hover:text-amber-espresso"
-            href="#whatsapp"
+            href="/catalogo"
           >
-            Consultar disponibilidad
+            Ver catálogo
           </a>
         </div>
 
@@ -49,9 +49,9 @@ export function FeaturedProductsSection() {
                   </span>
                   <a
                     className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-gold transition-colors hover:text-amber-espresso"
-                    href="#whatsapp"
+                    href="/catalogo"
                   >
-                    Consultar
+                    Ver piezas
                   </a>
                 </div>
               </div>

@@ -8,26 +8,26 @@ export function HeroSection() {
       <Container className="grid min-h-[calc(100vh-5rem)] gap-12 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-20">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-amber-gold">
-            Joyería fina boutique
+            Boutique de joyería fina
           </p>
           <h1 className="mt-5 font-heading text-6xl font-semibold leading-none text-amber-black sm:text-7xl lg:text-8xl">
             Casa Ámbar
           </h1>
           <p className="mt-6 max-w-xl font-heading text-3xl leading-tight text-amber-espresso sm:text-4xl">
-            Joyería fina para momentos que merecen quedarse.
+            Piezas listas para regalar, celebrar y conservar.
           </p>
           <p className="mt-6 max-w-xl text-base leading-8 text-amber-stone sm:text-lg">
-            Piezas elegantes, diseño personalizado y atención boutique en Chihuahua para celebrar promesas, regalos y recuerdos que importan.
+            Selección curada de anillos, argollas, collares y aretes con atención boutique en Chihuahua. Te ayudamos a elegir la pieza correcta según ocasión, estilo y disponibilidad.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href="#colecciones" size="lg">Explorar colecciones</Button>
-            <Button href="#diseno-personalizado" size="lg" variant="secondary">
-              Cotizar pieza personalizada
+            <Button href="/catalogo" size="lg">Comprar joyería</Button>
+            <Button href="#asesoria" size="lg" variant="secondary">
+              Pedir asesoría
             </Button>
           </div>
 
           <dl className="mt-10 grid gap-4 border-y border-amber-line py-6 sm:grid-cols-3">
-            {["Chihuahua", "Diseño personalizado", "Atención boutique"].map((item) => (
+            {["Piezas curadas", "Compra asistida", "Atención boutique"].map((item) => (
               <div key={item}>
                 <dt className="sr-only">Indicador</dt>
                 <dd className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-stone">
@@ -49,10 +49,10 @@ export function HeroSection() {
           </div>
           <div className="absolute bottom-12 left-12 max-w-xs">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-gold">
-              Fase 1
+              Nueva selección
             </p>
             <p className="mt-3 font-heading text-3xl leading-tight text-amber-black">
-              Una experiencia boutique para elegir con calma.
+              Joyería fina para descubrir y apartar con calma.
             </p>
           </div>
         </div>

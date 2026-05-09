@@ -10,8 +10,8 @@ export function TestimonialsSection() {
       <Container>
         <SectionHeader
           eyebrow="Reseñas"
-          title="Primeras señales de confianza."
-          description="Textos placeholder mientras se recopilan testimonios reales de clientas y clientes Casa Ámbar."
+          title="Clientes que eligieron con calma."
+          description="Referencias editoriales mientras se recopilan reseñas reales de clientas y clientes Casa Ámbar."
           align="center"
         />
 

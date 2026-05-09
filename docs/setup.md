@@ -151,7 +151,7 @@ La Home debe mostrar:
 - Hero principal.
 - Colecciones.
 - Productos destacados mock.
-- Diseño personalizado.
+- Asesoría de compra.
 - Confianza.
 - Testimonios placeholder.
 - CTA WhatsApp.
@@ -230,6 +230,29 @@ Validar:
 - Django Admin muestra `Lead`.
 - El email de notificación se imprime en consola con `EmailBackend` de desarrollo.
 - El formulario de producto aparece en `/producto/:slug`.
-- El formulario de diseño personalizado aparece en la Home.
+- El formulario de asesoría de compra aparece en la Home.
 - El formulario de contacto general aparece en la sección `#contacto`.
 - Los formularios muestran estados de envío, éxito y error.
+
+## Validación funcional Fase 7
+
+Con frontend activo:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Validar:
+
+- Navbar muestra botón de carrito.
+- El botón abre y cierra el drawer lateral.
+- Un producto con precio se puede agregar desde `ProductCard`.
+- Un producto con precio se puede agregar desde `/producto/:slug`.
+- Un producto `requires_quote=true` o sin precio muestra cotización y no entra al carrito.
+- Agregar el mismo producto incrementa cantidad.
+- Se puede incrementar, decrementar y eliminar un item.
+- Se puede vaciar el carrito.
+- El subtotal se actualiza correctamente.
+- Al refrescar la página, el carrito persiste desde `localStorage`.
+- El drawer se puede cerrar con overlay, botón cerrar y tecla Escape.

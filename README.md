@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 6 — Leads y Cotizaciones**.
+Estado actual: **Fase 7 — Carrito Básico**.
 
 ## Stack técnico
 
@@ -138,7 +138,7 @@ Aplicación:
 http://localhost:5173
 ```
 
-La Home actual incluye hero premium, colecciones placeholder, productos destacados mock, diseño personalizado, confianza, testimonios placeholder, CTA WhatsApp configurable y newsletter visual sin envío real.
+La Home actual incluye hero ecommerce premium, categorías, productos destacados mock, asesoría de compra, confianza, testimonios placeholder, CTA WhatsApp configurable y formulario de contacto real.
 
 Rutas frontend de catálogo:
 
@@ -160,6 +160,16 @@ GET /api/catalog/products/?category={slug}
 GET /api/catalog/products/?featured=true
 GET /api/catalog/products/?requires_quote=true
 GET /api/catalog/products/{slug}/
+```
+
+Carrito frontend:
+
+```txt
+- Estado global con Context API.
+- Drawer lateral desde Navbar.
+- Persistencia local en localStorage.
+- Productos bajo cotización no entran al carrito.
+- El subtotal frontend es provisional hasta integrar checkout real.
 ```
 
 ## Variables de entorno
@@ -184,4 +194,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 7 debe enfocarse en carrito básico: estado global del carrito, agregar producto, eliminar producto, cambiar cantidad, cart drawer lateral, persistencia en localStorage y resumen de compra, sin Stripe todavía.
+Fase 8 debe enfocarse en Stripe Checkout: crear modelo `Order`, modelo `OrderItem`, endpoint `create-checkout-session`, integración con Stripe Checkout, páginas success/cancel, webhook de pago exitoso y guardado de orden pagada.

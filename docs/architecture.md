@@ -86,11 +86,23 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 ## Decisiones técnicas de Fase 6
 
 - Se creó `apps.leads` para capturar oportunidades comerciales antes de carrito y pagos.
-- `Lead` concentra interés en producto, diseño personalizado y contacto general mediante `lead_type`.
+- `Lead` concentra interés en producto, asesoría de compra y contacto general mediante `lead_type`.
 - La API pública expone solo `POST /api/leads/` con `APIView`; no hay listado ni retrieve público.
 - El serializer no acepta `status`, por lo que todo lead público nace con estado `NEW`.
 - Si el lead está asociado a producto, `product_name_snapshot` se asigna automáticamente para conservar contexto comercial.
 - El email interno usa configuración estándar de Django y `console.EmailBackend` por defecto en desarrollo.
-- El frontend usa un `LeadForm` reutilizable con wrappers específicos para producto, diseño personalizado y contacto.
+- El frontend usa un `LeadForm` reutilizable con wrappers específicos para producto, asesoría de compra y contacto.
 - No se agregaron Formik, React Hook Form, Zod ni estado global; las validaciones son locales y también existen en backend.
 - No se implementaron CAPTCHA, rate limiting, CRM avanzado, WhatsApp API, carrito, Stripe ni órdenes.
+
+## Decisiones técnicas de Fase 7
+
+- Se agregó carrito básico solo en frontend para representar intención de compra antes de pagos.
+- El estado global usa Context API + reducer; no se agregó Redux, Zustand ni librerías externas.
+- Los items del carrito guardan solo datos mínimos en `localStorage`, no `ProductDetail` completo.
+- `CartDrawer` se monta una sola vez en `MainLayout` y se controla desde `CartContext`.
+- `CartButton` se integra en Navbar para desktop y mobile.
+- `ProductCard` y `ProductActions` agregan al carrito solo productos con precio válido y sin `requires_quote`.
+- Los productos bajo cotización permanecen fuera del carrito y usan CTA de cotización/WhatsApp.
+- El subtotal se calcula en frontend con `parseMoneyValue`; los totales definitivos deberán calcularse en backend durante checkout.
+- No se implementaron Stripe, checkout real, órdenes, inventario avanzado, impuestos ni envíos.

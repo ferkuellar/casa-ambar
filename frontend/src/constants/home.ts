@@ -11,13 +11,13 @@ export const collections: CollectionPreview[] = [
   {
     name: "Anillos",
     description:
-      "Símbolos íntimos para promesas, aniversarios y momentos personales.",
+      "Piezas seleccionadas para promesas, aniversarios y uso diario.",
     cta: "Explorar anillos",
   },
   {
     name: "Argollas",
     description:
-      "Piezas pensadas para acompañar una historia compartida.",
+      "Modelos disponibles para celebrar una historia compartida.",
     cta: "Ver argollas",
   },
   {
@@ -37,7 +37,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Anillo Aurora",
     category: "Anillos",
     description:
-      "Una silueta cálida y delicada pensada para promesas personales.",
+      "Una silueta cálida y delicada para promesas personales.",
     priceLabel: "Consultar precio",
   },
   {
@@ -58,19 +58,19 @@ export const featuredProducts: FeaturedProduct[] = [
 
 export const customDesignSteps: ProcessStep[] = [
   {
-    title: "Cuéntanos tu idea",
+    title: "Elige la ocasión",
     description:
-      "Partimos de la ocasión, la intención y las referencias que quieres conservar.",
+      "Te ayudamos a ubicar piezas disponibles según regalo, compromiso, aniversario o uso diario.",
   },
   {
-    title: "Definimos diseño y materiales",
+    title: "Revisamos opciones",
     description:
-      "Aterrizamos proporciones, acabados y una dirección clara antes de producir.",
+      "Compartimos disponibilidad, materiales, medidas y rangos de precio para decidir con claridad.",
   },
   {
-    title: "Creamos una pieza con intención",
+    title: "Aparta o agenda",
     description:
-      "La pieza se prepara con seguimiento cercano y atención al detalle.",
+      "Coordinamos compra asistida, apartado o cita boutique para que la pieza llegue en el momento correcto.",
   },
 ];
 
@@ -78,17 +78,17 @@ export const trustItems: TrustItem[] = [
   {
     title: "Atención boutique",
     description:
-      "Acompañamiento cercano para elegir, cotizar o proyectar una pieza con calma.",
+      "Acompañamiento cercano para elegir una pieza disponible con calma.",
   },
   {
-    title: "Diseño personalizado",
+    title: "Piezas curadas",
     description:
-      "Proceso pensado para transformar historias, promesas y regalos en piezas únicas.",
+      "Selección boutique de anillos, argollas, collares y aretes listos para venta o apartado.",
   },
   {
-    title: "Entrega y seguimiento",
+    title: "Disponibilidad clara",
     description:
-      "Comunicación clara durante el proceso y preparación cuidadosa de cada pieza.",
+      "Confirmamos existencia, precio y tiempos antes de avanzar con la compra.",
   },
   {
     title: "Compra segura próximamente",
@@ -108,7 +108,7 @@ export const testimonials: Testimonial[] = [
     author: "Cliente Casa Ámbar",
   },
   {
-    quote: "El diseño se sintió personal desde el primer contacto.",
+    quote: "Encontré una pieza elegante sin tener que buscar en muchas tiendas.",
     author: "Cliente Casa Ámbar",
   },
 ];
