@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 3 — Catálogo Base y Modelo de Productos**.
+Estado actual: **Fase 4 — Catálogo de Productos integrado con API**.
 
 ## Stack técnico
 
@@ -27,11 +27,15 @@ casa-ambar-ecommerce/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── catalog/
 │   │   │   ├── layout/
 │   │   │   ├── sections/
 │   │   │   └── ui/
 │   │   ├── constants/
-│   │   └── lib/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── types/
 │   ├── .env.example
 │   ├── package.json
 │   └── vite.config.ts
@@ -41,7 +45,8 @@ casa-ambar-ecommerce/
 │   ├── auditoria-fase0.md
 │   ├── auditoria-fase1.md
 │   ├── auditoria-fase2.md
-│   └── auditoria-fase3.md
+│   ├── auditoria-fase3.md
+│   └── auditoria-fase4.md
 ├── .gitignore
 └── README.md
 ```
@@ -113,6 +118,26 @@ http://localhost:5173
 
 La Home actual incluye hero premium, colecciones placeholder, productos destacados mock, diseño personalizado, confianza, testimonios placeholder, CTA WhatsApp configurable y newsletter visual sin envío real.
 
+Rutas frontend de catálogo:
+
+```txt
+http://localhost:5173/
+http://localhost:5173/catalogo
+http://localhost:5173/colecciones
+http://localhost:5173/colecciones/{categorySlug}
+```
+
+El catálogo frontend consume:
+
+```txt
+GET /api/catalog/categories/
+GET /api/catalog/categories/{slug}/
+GET /api/catalog/products/
+GET /api/catalog/products/?category={slug}
+GET /api/catalog/products/?featured=true
+GET /api/catalog/products/?requires_quote=true
+```
+
 ## Variables de entorno
 
 Backend:
@@ -132,4 +157,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 4 debe enfocarse en integración de catálogo en frontend: consumir API desde React, mostrar catálogo real, página por categoría, página de producto y estados loading/error/empty.
+Fase 5 debe enfocarse en la página individual de producto: ruta `/producto/:slug`, galería, información técnica, descripción emocional, CTA WhatsApp, productos relacionados y schema básico.

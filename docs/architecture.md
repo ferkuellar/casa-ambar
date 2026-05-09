@@ -60,3 +60,14 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - `ProductImage` usa `ImageField` con media local para desarrollo; producción deberá migrar a almacenamiento externo.
 - El Django Admin queda como primer panel operativo de catálogo.
 - No se implementaron carrito, órdenes, pagos, login/JWT ni panel admin custom.
+
+## Decisiones técnicas de Fase 4
+
+- Se configuró `react-router-dom` para separar Home, catálogo, colecciones y página por categoría.
+- `App.tsx` quedó como composición de rutas dentro de `MainLayout`.
+- Las páginas controlan data fetching con `useEffect` y `useState`; los componentes de catálogo solo renderizan UI.
+- `frontend/src/lib/api.ts` centraliza `fetch` y lee `VITE_API_BASE_URL`.
+- `frontend/src/services/catalogApi.ts` encapsula endpoints de categorías, colecciones y productos.
+- `frontend/src/types/catalog.ts` refleja los serializadores reales de DRF, incluyendo `image_url` para imágenes.
+- `/colecciones` usa `Category` como colección comercial inicial para no crear una capa editorial adicional antes de necesitarla.
+- No se implementaron página individual de producto, carrito, Stripe, órdenes, login ni búsqueda avanzada.

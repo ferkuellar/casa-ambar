@@ -93,6 +93,29 @@ http://localhost:5173
 
 La pantalla inicial debe mostrar el layout premium de Casa Ámbar y el estado del backend como conectado en la sección técnica final.
 
+## Cómo validar catálogo frontend
+
+Con backend y frontend activos, abrir:
+
+```txt
+http://localhost:5173/catalogo
+http://localhost:5173/colecciones
+```
+
+Si existe una categoría activa con slug `anillos`, abrir:
+
+```txt
+http://localhost:5173/colecciones/anillos
+```
+
+Validar:
+
+- El catálogo muestra productos desde `/api/catalog/products/`.
+- El filtro de categoría consulta `/api/catalog/products/?category={slug}`.
+- Los filtros de destacados y cotización actualizan resultados.
+- Si el backend está apagado, se muestra estado de error.
+- Si no hay productos activos, se muestra estado vacío.
+
 ## Cómo validar catálogo API
 
 Con backend activo:
@@ -131,3 +154,18 @@ La Home debe mostrar:
 - CTA WhatsApp.
 - Newsletter visual sin envío real.
 - Healthcheck técnico al final.
+
+## Validación funcional Fase 4
+
+La aplicación debe exponer:
+
+- `/` para Home.
+- `/catalogo` para catálogo de productos.
+- `/colecciones` para categorías comerciales.
+- `/colecciones/:categorySlug` para productos filtrados por categoría.
+
+El frontend requiere:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000/api
+```

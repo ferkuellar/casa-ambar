@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { siteConfig } from "../../constants/site";
+import { routes } from "../../lib/routes";
 import { cn } from "../../lib/cn";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
@@ -13,27 +15,27 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-amber-line bg-amber-ivory/95 backdrop-blur">
       <Container>
         <nav className="flex min-h-20 items-center justify-between gap-6" aria-label="Principal">
-          <a
+          <Link
             className="font-heading text-2xl font-semibold text-amber-black transition-colors hover:text-amber-gold"
-            href="#inicio"
+            to={routes.home}
           >
             {siteConfig.name}
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
             {siteConfig.navLinks.map((link) => (
-              <a
+              <Link
                 className="text-sm font-medium text-amber-stone transition-colors hover:text-amber-black"
-                href={link.href}
+                to={link.href}
                 key={link.href}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="hidden lg:block">
-            <Button size="sm" variant="secondary">
+            <Button href={routes.contact} size="sm" variant="secondary">
               Cotizar pieza
             </Button>
           </div>
@@ -63,16 +65,16 @@ export function Navbar() {
           <div className="min-h-0">
             <div className="flex flex-col gap-1 border-t border-amber-line py-4">
               {siteConfig.navLinks.map((link) => (
-                <a
+                <Link
                   className="rounded-brand px-2 py-3 text-sm font-medium text-amber-stone transition-colors hover:bg-amber-cream hover:text-amber-black"
-                  href={link.href}
+                  to={link.href}
                   key={link.href}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button className="mt-3 w-full" size="md" variant="primary">
+              <Button className="mt-3 w-full" href={routes.contact} size="md" variant="primary">
                 Cotizar pieza
               </Button>
             </div>
