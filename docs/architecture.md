@@ -1,0 +1,33 @@
+# Arquitectura Casa Ámbar E-commerce
+
+## Visión general
+
+Casa Ámbar usa una arquitectura separada entre frontend y backend para mantener responsabilidades claras desde la fase inicial.
+
+- Frontend: React, Vite, TypeScript y TailwindCSS.
+- Backend: Django y Django REST Framework.
+- Base de datos actual: SQLite para desarrollo local.
+- Base de datos futura: PostgreSQL cuando el proyecto avance a datos reales.
+
+## Razón de React + Django
+
+React con Vite permite construir una experiencia de compra rápida, modular y flexible para una marca boutique. Django aporta una base madura para APIs, administración futura, seguridad, modelos de datos y crecimiento hacia operaciones de e-commerce.
+
+## Flujo actual de desarrollo
+
+1. El frontend corre en `http://localhost:5173`.
+2. El backend corre en `http://localhost:8000`.
+3. El frontend consume `VITE_API_BASE_URL`.
+4. La API expone `GET /api/health/` para validar conectividad.
+
+## Futuro flujo e-commerce
+
+En fases posteriores, el frontend consumirá endpoints de productos, categorías, inventario, leads, checkout y contenido SEO. El backend podrá concentrar reglas de negocio, validaciones, pagos con Stripe, administración y persistencia en PostgreSQL.
+
+## Decisiones técnicas de Fase 0
+
+- Se separó `frontend/` y `backend/` para facilitar despliegues independientes.
+- Se configuró DRF desde el inicio para evitar migraciones estructurales innecesarias después.
+- Se agregó CORS solo para desarrollo local.
+- Se dejó SQLite como base temporal para reducir fricción inicial.
+- No se implementó autenticación, catálogo, carrito, pagos ni CRM para mantener el alcance limpio.
