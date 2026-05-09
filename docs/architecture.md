@@ -71,3 +71,14 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - `frontend/src/types/catalog.ts` refleja los serializadores reales de DRF, incluyendo `image_url` para imágenes.
 - `/colecciones` usa `Category` como colección comercial inicial para no crear una capa editorial adicional antes de necesitarla.
 - No se implementaron página individual de producto, carrito, Stripe, órdenes, login ni búsqueda avanzada.
+
+## Decisiones técnicas de Fase 5
+
+- Se agregó la ruta `/producto/:slug` para ficha individual de producto.
+- `ProductDetailPage` consume `GET /api/catalog/products/{slug}/` y compone componentes pequeños de galería, información, detalles técnicos, acciones, relacionados y JSON-LD.
+- `ProductCard` ahora enlaza al detalle con `routes.product(product.slug)`.
+- Los productos relacionados se resuelven por categoría usando `getProducts({ category })`, excluyendo el slug actual y limitando resultados en frontend.
+- La galería usa estado local y thumbnails accesibles sin librerías externas.
+- El CTA principal usa WhatsApp como operación asistida; no se implementó Stripe, carrito ni órdenes.
+- `ProductJsonLd` renderiza schema básico con `JSON.stringify`, omitiendo datos no disponibles y usando disponibilidad según stock.
+- Se mantiene React/Vite sin SSR; el SEO básico mejora con JSON-LD, alt text y estructura visible, pero no sustituye SEO server-rendered.

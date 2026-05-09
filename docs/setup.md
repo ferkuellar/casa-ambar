@@ -169,3 +169,23 @@ El frontend requiere:
 ```env
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
+
+## Validación funcional Fase 5
+
+Con backend y frontend activos, abrir una ficha de producto existente:
+
+```txt
+http://localhost:5173/producto/{productSlug}
+```
+
+Validar:
+
+- `ProductCard` navega a `/producto/:slug` desde catálogo y relacionados.
+- La ficha carga desde `/api/catalog/products/{slug}/`.
+- La galería muestra imágenes o placeholder premium.
+- Los thumbnails cambian la imagen principal cuando hay más de una imagen.
+- La información técnica oculta campos vacíos.
+- El CTA de WhatsApp genera un enlace `wa.me` con mensaje de producto.
+- El botón de compra queda preparado visualmente sin procesar pagos.
+- Los productos relacionados salen de la misma categoría.
+- El JSON-LD Product se renderiza en la página.

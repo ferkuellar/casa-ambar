@@ -6,6 +6,7 @@ import { CatalogPage } from "./pages/CatalogPage";
 import { CategoryPage } from "./pages/CategoryPage";
 import { CollectionsPage } from "./pages/CollectionsPage";
 import { HomePage } from "./pages/HomePage";
+import { ProductDetailPage } from "./pages/ProductDetailPage";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Route path={routes.catalog} element={<CatalogPage />} />
         <Route path={routes.collections} element={<CollectionsPage />} />
         <Route path="/colecciones/:categorySlug" element={<CategoryPage />} />
+        <Route path="/producto/:slug" element={<ProductDetailPage />} />
       </Routes>
     </MainLayout>
   );

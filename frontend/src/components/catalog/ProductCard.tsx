@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { siteConfig } from "../../constants/site";
+import { routes } from "../../lib/routes";
 import { buildWhatsAppLink } from "../../lib/whatsapp";
 import type { ProductListItem } from "../../types/catalog";
 import { Button } from "../ui/Button";
@@ -64,13 +67,12 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mt-6 border-t border-amber-line pt-5">
           <p className="text-sm font-semibold text-amber-espresso">{priceText}</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <span
-              className="inline-flex cursor-not-allowed items-center justify-center rounded-brand border border-amber-line px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-amber-muted"
-              aria-disabled="true"
-              title="Disponible en Fase 5"
+            <Link
+              className="inline-flex items-center justify-center rounded-brand border border-amber-black px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-amber-black transition-colors hover:bg-amber-black hover:text-amber-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-gold"
+              to={routes.product(product.slug)}
             >
               Ver detalle
-            </span>
+            </Link>
             <Button href={whatsappHref} target="_blank" rel="noreferrer" size="sm">
               Consultar
             </Button>

@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 4 — Catálogo de Productos integrado con API**.
+Estado actual: **Fase 5 — Página Individual de Producto**.
 
 ## Stack técnico
 
@@ -125,6 +125,7 @@ http://localhost:5173/
 http://localhost:5173/catalogo
 http://localhost:5173/colecciones
 http://localhost:5173/colecciones/{categorySlug}
+http://localhost:5173/producto/{productSlug}
 ```
 
 El catálogo frontend consume:
@@ -136,6 +137,7 @@ GET /api/catalog/products/
 GET /api/catalog/products/?category={slug}
 GET /api/catalog/products/?featured=true
 GET /api/catalog/products/?requires_quote=true
+GET /api/catalog/products/{slug}/
 ```
 
 ## Variables de entorno
@@ -157,4 +159,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 5 debe enfocarse en la página individual de producto: ruta `/producto/:slug`, galería, información técnica, descripción emocional, CTA WhatsApp, productos relacionados y schema básico.
+Fase 6 debe enfocarse en leads y cotizaciones: formulario “Me interesa esta pieza”, formulario de diseño personalizado, modelo `Lead` en Django, API para guardar leads, vista de leads en Django Admin y notificación básica por email.

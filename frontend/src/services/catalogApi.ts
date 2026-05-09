@@ -45,3 +45,22 @@ export function getProducts(filters?: ProductFilters): Promise<ProductListItem[]
 export function getProductBySlug(slug: string): Promise<ProductDetail> {
   return request<ProductDetail>(`/catalog/products/${encodeURIComponent(slug)}/`);
 }
+
+export async function getRelatedProducts({
+  category,
+  excludeSlug,
+  limit = 3,
+}: {
+  category?: string;
+  excludeSlug?: string;
+  limit?: number;
+}): Promise<ProductListItem[]> {
+  if (!category) {
+    return [];
+  }
+
+  const products = await getProducts({ active: true, category });
+  return products
+    .filter((product) => product.slug !== excludeSlug)
+    .slice(0, limit);
+}
