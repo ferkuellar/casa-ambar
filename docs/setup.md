@@ -92,3 +92,17 @@ http://localhost:5173
 ```
 
 La pantalla inicial debe mostrar el layout premium de Casa Ámbar y el estado del backend como conectado en la sección técnica final.
+
+## Validación visual Fase 2
+
+La Home debe mostrar:
+
+- Hero principal.
+- Colecciones.
+- Productos destacados mock.
+- Diseño personalizado.
+- Confianza.
+- Testimonios placeholder.
+- CTA WhatsApp.
+- Newsletter visual sin envío real.
+- Healthcheck técnico al final.

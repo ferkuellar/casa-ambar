@@ -1,4 +1,8 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
 
 import { cn } from "../../lib/cn";
 
@@ -11,7 +15,9 @@ type ButtonProps = {
   className?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
-} & Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "onClick">;
+  href?: string;
+} & Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "onClick"> &
+  Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel">;
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -35,15 +41,28 @@ export function Button({
   size = "md",
   type = "button",
   onClick,
+  href,
+  target,
+  rel,
 }: ButtonProps) {
+  const classNames = cn(
+    "inline-flex items-center justify-center rounded-brand font-body font-semibold uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-amber-gold disabled:pointer-events-none disabled:opacity-50",
+    variants[variant],
+    sizes[size],
+    className,
+  );
+
+  if (href) {
+    return (
+      <a className={classNames} href={href} target={target} rel={rel}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
-      className={cn(
-        "inline-flex items-center justify-center rounded-brand font-body font-semibold uppercase tracking-[0.16em] transition-colors duration-200 focus-visible:outline-amber-gold disabled:pointer-events-none disabled:opacity-50",
-        variants[variant],
-        sizes[size],
-        className,
-      )}
+      className={classNames}
       type={type}
       onClick={onClick}
     >

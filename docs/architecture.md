@@ -40,3 +40,12 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - La home usa placeholders editoriales sin datos reales para no adelantar catálogo.
 - `HealthCheck` se mantiene como bloque técnico discreto conectado a la API de Fase 0.
 - Se importan dos familias de Google Fonts: Cormorant Garamond para titulares e Inter para texto. La carga se documenta como decisión visual y debe revisarse en performance cuando exista SEO productivo.
+
+## Decisiones técnicas de Fase 2
+
+- La Home se transformó en una página comercial completa orientada a marca, confianza y captación.
+- Los datos de colecciones, productos destacados, pasos, confianza y testimonios viven en `frontend/src/constants/home.ts`.
+- Los tipos de Home viven en `frontend/src/types/home.ts` para evitar acoplar estructura de datos a componentes.
+- El CTA de WhatsApp usa `siteConfig.whatsappNumber`, `siteConfig.whatsappMessage` y `buildWhatsAppLink`.
+- El newsletter es solo UI placeholder; no envía datos ni crea integración externa.
+- No se conectó catálogo real, carrito, Stripe, CRM ni modelos Django.

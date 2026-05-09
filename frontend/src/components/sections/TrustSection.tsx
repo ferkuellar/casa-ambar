@@ -1,36 +1,21 @@
+import { trustItems } from "../../constants/home";
 import { Card } from "../ui/Card";
 import { Container } from "../ui/Container";
 import { SectionHeader } from "../ui/SectionHeader";
 
-
-const benefits = [
-  {
-    title: "Atención boutique",
-    description: "Acompañamiento cercano para elegir o proyectar una pieza con intención.",
-  },
-  {
-    title: "Diseño personalizado",
-    description: "Base visual preparada para solicitudes a medida y flujos de cotización.",
-  },
-  {
-    title: "Compra segura próximamente",
-    description: "La arquitectura queda lista para integrar pagos y validaciones en fases posteriores.",
-  },
-];
-
 export function TrustSection() {
   return (
-    <section id="diseno-personalizado" className="bg-amber-espresso py-20 text-amber-ivory sm:py-24">
+    <section className="bg-amber-espresso py-20 text-amber-ivory sm:py-24">
       <Container>
         <SectionHeader
-          eyebrow="Experiencia"
-          title="Lujo discreto, atención clara."
-          description="Beneficios iniciales planteados como bloques de confianza para evolucionar después con contenido real."
+          eyebrow="Confianza"
+          title="Servicio sobrio para decisiones importantes."
+          description="La experiencia se orienta a resolver dudas, cotizar con claridad y acompañar cada elección con atención cercana."
           align="center"
           tone="inverse"
         />
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {benefits.map((benefit) => (
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {trustItems.map((benefit) => (
             <Card
               className="border-white/10 bg-white/[0.04] p-6 shadow-none"
               key={benefit.title}

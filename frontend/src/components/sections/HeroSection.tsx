@@ -5,7 +5,7 @@ import { Container } from "../ui/Container";
 export function HeroSection() {
   return (
     <section id="inicio" className="bg-amber-ivory">
-      <Container className="grid min-h-[calc(100vh-5rem)] gap-12 py-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:py-20">
+      <Container className="grid min-h-[calc(100vh-5rem)] gap-12 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-20">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-amber-gold">
             Joyería fina boutique
@@ -17,14 +17,25 @@ export function HeroSection() {
             Joyería fina para momentos que merecen quedarse.
           </p>
           <p className="mt-6 max-w-xl text-base leading-8 text-amber-stone sm:text-lg">
-            Una experiencia boutique en construcción: piezas elegantes, diseño personalizado y atención cercana en Chihuahua.
+            Piezas elegantes, diseño personalizado y atención boutique en Chihuahua para celebrar promesas, regalos y recuerdos que importan.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg">Explorar colecciones</Button>
-            <Button size="lg" variant="secondary">
+            <Button href="#colecciones" size="lg">Explorar colecciones</Button>
+            <Button href="#diseno-personalizado" size="lg" variant="secondary">
               Cotizar pieza personalizada
             </Button>
           </div>
+
+          <dl className="mt-10 grid gap-4 border-y border-amber-line py-6 sm:grid-cols-3">
+            {["Chihuahua", "Diseño personalizado", "Atención boutique"].map((item) => (
+              <div key={item}>
+                <dt className="sr-only">Indicador</dt>
+                <dd className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-stone">
+                  {item}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
         <div className="relative min-h-[520px] overflow-hidden rounded-brand border border-amber-line bg-amber-cream shadow-premium">
@@ -41,7 +52,7 @@ export function HeroSection() {
               Fase 1
             </p>
             <p className="mt-3 font-heading text-3xl leading-tight text-amber-black">
-              Identidad visual lista para catálogo.
+              Una experiencia boutique para elegir con calma.
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="contacto" className="border-t border-amber-line bg-amber-black text-amber-ivory">
+    <footer className="border-t border-amber-line bg-amber-black text-amber-ivory">
       <Container className="py-14">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
