@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 5 — Página Individual de Producto**.
+Estado actual: **Fase 6 — Leads y Cotizaciones**.
 
 ## Stack técnico
 
@@ -21,6 +21,7 @@ casa-ambar-ecommerce/
 │   ├── apps/
 │   │   └── core/
 │   │   └── catalog/
+│   │   └── leads/
 │   ├── .env.example
 │   ├── manage.py
 │   └── requirements.txt
@@ -46,7 +47,9 @@ casa-ambar-ecommerce/
 │   ├── auditoria-fase1.md
 │   ├── auditoria-fase2.md
 │   ├── auditoria-fase3.md
-│   └── auditoria-fase4.md
+│   ├── auditoria-fase4.md
+│   ├── auditoria-fase5.md
+│   └── auditoria-fase6.md
 ├── .gitignore
 └── README.md
 ```
@@ -93,6 +96,25 @@ http://localhost:8000/api/catalog/collections/
 http://localhost:8000/api/catalog/products/
 http://localhost:8000/api/catalog/products/?featured=true
 http://localhost:8000/api/catalog/products/{slug}/
+```
+
+Leads API:
+
+```txt
+POST http://localhost:8000/api/leads/
+```
+
+Payload mínimo:
+
+```json
+{
+  "lead_type": "GENERAL_CONTACT",
+  "name": "Cliente Demo",
+  "email": "cliente@example.com",
+  "message": "Me interesa conocer más sobre Casa Ámbar.",
+  "preferred_contact_method": "EMAIL",
+  "source": "home_contact"
+}
 ```
 
 ## Frontend
@@ -149,6 +171,9 @@ SECRET_KEY=change-me
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 CORS_ALLOWED_ORIGINS=http://localhost:5173
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+DEFAULT_FROM_EMAIL=no-reply@casaambar.local
+LEADS_NOTIFICATION_EMAIL=ventas@casaambar.local
 ```
 
 Frontend:
@@ -159,4 +184,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 6 debe enfocarse en leads y cotizaciones: formulario “Me interesa esta pieza”, formulario de diseño personalizado, modelo `Lead` en Django, API para guardar leads, vista de leads en Django Admin y notificación básica por email.
+Fase 7 debe enfocarse en carrito básico: estado global del carrito, agregar producto, eliminar producto, cambiar cantidad, cart drawer lateral, persistencia en localStorage y resumen de compra, sin Stripe todavía.

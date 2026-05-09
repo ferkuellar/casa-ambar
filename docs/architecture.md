@@ -82,3 +82,15 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - El CTA principal usa WhatsApp como operación asistida; no se implementó Stripe, carrito ni órdenes.
 - `ProductJsonLd` renderiza schema básico con `JSON.stringify`, omitiendo datos no disponibles y usando disponibilidad según stock.
 - Se mantiene React/Vite sin SSR; el SEO básico mejora con JSON-LD, alt text y estructura visible, pero no sustituye SEO server-rendered.
+
+## Decisiones técnicas de Fase 6
+
+- Se creó `apps.leads` para capturar oportunidades comerciales antes de carrito y pagos.
+- `Lead` concentra interés en producto, diseño personalizado y contacto general mediante `lead_type`.
+- La API pública expone solo `POST /api/leads/` con `APIView`; no hay listado ni retrieve público.
+- El serializer no acepta `status`, por lo que todo lead público nace con estado `NEW`.
+- Si el lead está asociado a producto, `product_name_snapshot` se asigna automáticamente para conservar contexto comercial.
+- El email interno usa configuración estándar de Django y `console.EmailBackend` por defecto en desarrollo.
+- El frontend usa un `LeadForm` reutilizable con wrappers específicos para producto, diseño personalizado y contacto.
+- No se agregaron Formik, React Hook Form, Zod ni estado global; las validaciones son locales y también existen en backend.
+- No se implementaron CAPTCHA, rate limiting, CRM avanzado, WhatsApp API, carrito, Stripe ni órdenes.

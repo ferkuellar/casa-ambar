@@ -42,6 +42,9 @@ SECRET_KEY=change-me
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 CORS_ALLOWED_ORIGINS=http://localhost:5173
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+DEFAULT_FROM_EMAIL=no-reply@casaambar.local
+LEADS_NOTIFICATION_EMAIL=ventas@casaambar.local
 ```
 
 Frontend:
@@ -189,3 +192,44 @@ Validar:
 - El botón de compra queda preparado visualmente sin procesar pagos.
 - Los productos relacionados salen de la misma categoría.
 - El JSON-LD Product se renderiza en la página.
+
+## Validación funcional Fase 6
+
+Aplicar migraciones:
+
+```bash
+cd backend
+.venv\Scripts\activate
+python manage.py migrate
+```
+
+Validar endpoint de leads con backend activo:
+
+```txt
+POST http://localhost:8000/api/leads/
+```
+
+Payload ejemplo:
+
+```json
+{
+  "lead_type": "GENERAL_CONTACT",
+  "name": "Cliente Demo",
+  "email": "cliente@example.com",
+  "phone": "",
+  "message": "Me interesa conocer más sobre Casa Ámbar.",
+  "preferred_contact_method": "EMAIL",
+  "source": "home_contact"
+}
+```
+
+Validar:
+
+- `POST /api/leads/` crea lead válido.
+- `GET /api/leads/` responde método no permitido; no hay listado público.
+- Django Admin muestra `Lead`.
+- El email de notificación se imprime en consola con `EmailBackend` de desarrollo.
+- El formulario de producto aparece en `/producto/:slug`.
+- El formulario de diseño personalizado aparece en la Home.
+- El formulario de contacto general aparece en la sección `#contacto`.
+- Los formularios muestran estados de envío, éxito y error.

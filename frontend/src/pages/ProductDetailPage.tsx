@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { CatalogState } from "../components/catalog/CatalogState";
+import { ProductInterestForm } from "../components/forms/ProductInterestForm";
 import { ProductActions } from "../components/product/ProductActions";
 import { ProductGallery } from "../components/product/ProductGallery";
 import { ProductInfo } from "../components/product/ProductInfo";
@@ -107,6 +108,7 @@ export function ProductDetailPage() {
                 <div className="space-y-8">
                   <ProductInfo product={product} />
                   <ProductActions product={product} />
+                  <ProductInterestForm product={product} />
                   <ProductTechnicalDetails product={product} />
                 </div>
               </div>

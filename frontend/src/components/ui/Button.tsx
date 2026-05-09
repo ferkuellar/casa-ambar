@@ -16,7 +16,7 @@ type ButtonProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   href?: string;
-} & Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "onClick"> &
+} & Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "onClick" | "disabled"> &
   Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel">;
 
 const variants: Record<ButtonVariant, string> = {
@@ -41,6 +41,7 @@ export function Button({
   size = "md",
   type = "button",
   onClick,
+  disabled,
   href,
   target,
   rel,
@@ -65,6 +66,7 @@ export function Button({
       className={classNames}
       type={type}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

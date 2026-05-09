@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "apps.core",
     "apps.catalog",
+    "apps.leads",
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,16 @@ REST_FRAMEWORK = {
         "rest_framework.parsers.JSONParser",
     ],
 }
+
+EMAIL_BACKEND = os.environ.get(
+    "EMAIL_BACKEND",
+    "django.core.mail.backends.console.EmailBackend",
+)
+DEFAULT_FROM_EMAIL = os.environ.get(
+    "DEFAULT_FROM_EMAIL",
+    "no-reply@casaambar.local",
+)
+LEADS_NOTIFICATION_EMAIL = os.environ.get(
+    "LEADS_NOTIFICATION_EMAIL",
+    "ventas@casaambar.local",
+)
