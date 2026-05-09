@@ -93,6 +93,31 @@ http://localhost:5173
 
 La pantalla inicial debe mostrar el layout premium de Casa Ámbar y el estado del backend como conectado en la sección técnica final.
 
+## Cómo validar catálogo API
+
+Con backend activo:
+
+```txt
+http://localhost:8000/api/catalog/categories/
+http://localhost:8000/api/catalog/collections/
+http://localhost:8000/api/catalog/products/
+http://localhost:8000/api/catalog/products/?featured=true
+```
+
+Si existe un producto con slug `anillo-aurora`:
+
+```txt
+http://localhost:8000/api/catalog/products/anillo-aurora/
+```
+
+## Tests backend
+
+```bash
+cd backend
+.venv\Scripts\activate
+python manage.py test
+```
+
 ## Validación visual Fase 2
 
 La Home debe mostrar:

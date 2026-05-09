@@ -49,3 +49,14 @@ En fases posteriores, el frontend consumirá endpoints de productos, categorías
 - El CTA de WhatsApp usa `siteConfig.whatsappNumber`, `siteConfig.whatsappMessage` y `buildWhatsAppLink`.
 - El newsletter es solo UI placeholder; no envía datos ni crea integración externa.
 - No se conectó catálogo real, carrito, Stripe, CRM ni modelos Django.
+
+## Decisiones técnicas de Fase 3
+
+- Se creó `apps.catalog` como app única para categorías, colecciones, productos e imágenes.
+- Se usó `DecimalField` para precios; no se usan floats para dinero.
+- Los endpoints públicos de catálogo son `ReadOnlyModelViewSet`.
+- Las rutas viven bajo `/api/catalog/` y usan `slug` como lookup público.
+- Los filtros básicos se implementan en `get_queryset()` para evitar agregar `django-filter` antes de necesitarlo.
+- `ProductImage` usa `ImageField` con media local para desarrollo; producción deberá migrar a almacenamiento externo.
+- El Django Admin queda como primer panel operativo de catálogo.
+- No se implementaron carrito, órdenes, pagos, login/JWT ni panel admin custom.

@@ -2,7 +2,7 @@
 
 Fundación técnica para el e-commerce boutique premium de Casa Ámbar, una joyería fina preparada para crecer hacia catálogo, productos, pagos, leads, CRM y SEO técnico.
 
-Estado actual: **Fase 2 — Home Premium**.
+Estado actual: **Fase 3 — Catálogo Base y Modelo de Productos**.
 
 ## Stack técnico
 
@@ -20,6 +20,7 @@ casa-ambar-ecommerce/
 │   ├── config/
 │   ├── apps/
 │   │   └── core/
+│   │   └── catalog/
 │   ├── .env.example
 │   ├── manage.py
 │   └── requirements.txt
@@ -39,7 +40,8 @@ casa-ambar-ecommerce/
 │   ├── setup.md
 │   ├── auditoria-fase0.md
 │   ├── auditoria-fase1.md
-│   └── auditoria-fase2.md
+│   ├── auditoria-fase2.md
+│   └── auditoria-fase3.md
 ├── .gitignore
 └── README.md
 ```
@@ -56,6 +58,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+Tests backend:
+
+```bash
+python manage.py test
+```
+
 Healthcheck:
 
 ```txt
@@ -70,6 +78,16 @@ Respuesta esperada:
   "service": "casa-ambar-api",
   "phase": "fase-0"
 }
+```
+
+Catálogo API:
+
+```txt
+http://localhost:8000/api/catalog/categories/
+http://localhost:8000/api/catalog/collections/
+http://localhost:8000/api/catalog/products/
+http://localhost:8000/api/catalog/products/?featured=true
+http://localhost:8000/api/catalog/products/{slug}/
 ```
 
 ## Frontend
@@ -114,4 +132,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 ## Próxima fase recomendada
 
-Fase 3 debe enfocarse en catálogo base y modelo de productos: productos, categorías, colecciones, imágenes, serializers, endpoints y pruebas API mínimas. No conviene avanzar a Stripe o carrito antes de tener el dominio de productos estable.
+Fase 4 debe enfocarse en integración de catálogo en frontend: consumir API desde React, mostrar catálogo real, página por categoría, página de producto y estados loading/error/empty.
